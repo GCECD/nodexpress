@@ -6,11 +6,13 @@ spec:
   replicas:
   template:
     metadata:
-      name:hello-node
+      name: hello-node
     spec:
       containers:
       - image: gcr.io/cloud-solutions-images/hello-node:1.0.0
         imagePullPolicy: Always
         name: hello-node
         ports:
-        - "containerPort:8080 protocol: TCP  name:hello-node"
+        - protocol: TCP
+        name: hello-node
+        containerPort: 8080
