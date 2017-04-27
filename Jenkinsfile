@@ -16,5 +16,5 @@ node {
   
   stage 'Deploy Application'
   sh("sed -i.bak 's#gcr.io/cloud-solutions-images/hello-node:1.0.0#${imageTag}#' ./deploy/script/*.yaml")
-  sh("kubectl --namespace=development apply -f deploy/script/")
+  sh("kubectl create -f deploy/script/")
 }
