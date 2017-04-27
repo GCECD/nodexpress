@@ -14,5 +14,5 @@ spec:
         name: hello-node
         ports:
         - protocol: TCP
-        name: hello-node
-        containerPort: 8080
+          name: hello-node
+          containerPort: 8080
