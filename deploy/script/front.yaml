@@ -1,18 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
-metadata:  
-  name: hello-node  
+metadata:
+  name: hello-node
 spec:
-  replicas:
+  replicas: 1
   template:
     metadata:
-      name: hello-node
+      labels:
+        app: hello-node
+
     spec:
       containers:
-      - image: gcr.io/cloud-solutions-images/hello-node:1.0.0
-        imagePullPolicy: Always
-        name: hello-node
-        ports:
-        - protocol: TCP
-          name: hello-node
-          containerPort: 8080
+        - name: hello-node
+          image: "gcr.io/cloud-solutions-images/hello-node:1.0.0"
+          ports:
+            - protocol: TCP
+              name: hello-node
+              containerPort: 8080
