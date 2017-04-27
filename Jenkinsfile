@@ -1,7 +1,7 @@
 node {
   def project = 'simple-nodejs-kubernetes'
   def appName = 'hello-node'  
-  def imageTag = "gcr.io/${project}/${appName}:v1"
+  def imageTag = "gcr.io/${project}/${appName}:v2"
 
   checkout scm
 
