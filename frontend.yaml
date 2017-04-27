@@ -33,7 +33,7 @@ spec:
         run: hello-node
     spec:
       containers:
-      - image: gcr.io/simple-nodejs-kubernetes/hello-node:v3 # Update this line
+      - image: gcr.io/cloud-solutions-images/hello-node:1.0.0
         imagePullPolicy: Always
         name: hello-node
         ports:
