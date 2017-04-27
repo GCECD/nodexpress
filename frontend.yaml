@@ -12,9 +12,9 @@ metadata:
   labels:
     run: hello-node
   name: hello-node
-  namespace: default
+  namespace: development
   resourceVersion: "151017"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/hello-node
+  selfLink: /apis/extensions/v1beta1/namespaces/development/deployments/hello-node
   uid: 981fe302-f1e9-11e5-9a78-42010af00005
 spec:
   replicas: 2
