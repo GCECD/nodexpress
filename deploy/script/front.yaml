@@ -7,20 +7,10 @@ kind: Deployment
 metadata:  
   name: hello-node  
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      run: hello-node
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
+  replicas:
   template:
     metadata:
-      creationTimestamp: null
-      labels:
-        run: hello-node
+      name:hello-node
     spec:
       containers:
       - image: gcr.io/cloud-solutions-images/hello-node:1.0.0
