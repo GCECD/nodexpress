@@ -1,8 +1,7 @@
 node {
   def project = 'simple-nodejs-kubernetes'
-  def appName = 'hello-node'
-  def feSvcName = "${appName}-frontend"
-  def imageTag = "gcr.io/${project}/${appName}:${env.BUILD_NUMBER}"
+  def appName = 'hello-node'  
+  def imageTag = "gcr.io/${project}/${appName}:v1"
 
   checkout scm
 
@@ -11,13 +10,7 @@ node {
 
   stage 'Push image to registry'
   sh("gcloud docker push ${imageTag}")
-
-  stage "Deploy Application"
   
-  
-     sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/canary/*.yaml")
-        sh("kubectl --namespace=production apply -f k8s/services/")
-        sh("kubectl --namespace=production apply -f k8s/canary/")
-        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
-
+  stage 'Deploy Application'
+  sh("kubectl --namespace=development apply -f frontend.yaml")
 }
