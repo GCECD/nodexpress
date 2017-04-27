@@ -12,12 +12,12 @@ metadata:
   labels:
     run: hello-node
   name: hello-node
-  namespace: development
+  namespace: default
   resourceVersion: "151017"
-  selfLink: /apis/extensions/v1beta1/namespaces/development/deployments/hello-node
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/hello-node
   uid: 981fe302-f1e9-11e5-9a78-42010af00005
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       run: hello-node
@@ -33,8 +33,8 @@ spec:
         run: hello-node
     spec:
       containers:
-      - image: gcr.io/simple-nodejs-kubernetes/hello-node:v2 # Update this line
-        imagePullPolicy: Always
+      - image: gcr.io/simple-nodejs-kubernetes/hello-node:v1 # Update this line
+        imagePullPolicy: IfNotPresent
         name: hello-node
         ports:
         - containerPort: 8080

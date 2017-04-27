@@ -1,4 +1,4 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
+#Please edit the object below. Lines beginning with a '#' will be ignored,
 # and an empty file will abort the edit. If an error occurs while saving this file will be
 # reopened with the relevant failures.
 #
@@ -33,8 +33,8 @@ spec:
         run: hello-node
     spec:
       containers:
-      - image: gcr.io/simple-nodejs-kubernetes/hello-node:v2 # Update this line
-        imagePullPolicy: Always
+      - image: gcr.io/simple-nodejs-kubernetes/hello-node:v1 # Update this line
+        imagePullPolicy: IfNotPresent
         name: hello-node
         ports:
         - containerPort: 8080
