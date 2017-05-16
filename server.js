@@ -1,7 +1,7 @@
 var http = require('http');
 var handleRequest = function(request, response) {
   response.writeHead(200);
-  response.end("Hello, from Persistent !!");
+  response.end("Hello, from Persistent limited !!");
 }
 var www = http.createServer(handleRequest);
 www.listen(8080);
