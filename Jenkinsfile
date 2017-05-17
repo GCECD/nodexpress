@@ -5,7 +5,7 @@ node {
   
   checkout scm
   stage 'Build image'
-   sh("docker image ls")
+   sh("docker images")
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
