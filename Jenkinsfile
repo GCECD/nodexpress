@@ -11,6 +11,6 @@ node {
   sh("gcloud docker push ${imageTag}")
   
   stage 'Deploy Application'
-  sh("sed -i.bak 's#gcr.io/cloud-solutions-images/hello-node:1.0.0#${imageTag}#' ./deployment/script/front.yaml")
-  sh("kubectl apply -f deployment/script/front.yaml")
+  sh("sed -i.bak 's#gcr.io/cloud-solutions-images/hello-node:1.0.0#${imageTag}#' ./deployment/script/*.yaml")
+  sh("kubectl apply -f deployment/script/")
 }
