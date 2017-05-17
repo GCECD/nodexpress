@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: hello-node
-          image: gcr.io/virajtest-167408/hello-node:15.0
+          image: gcr.io/virajtest-167408/hello-node:16.0
           ports:
             - protocol: TCP
               name: hello-node

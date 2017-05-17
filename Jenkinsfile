@@ -8,5 +8,5 @@ node {
 
   
   stage 'Deploy Application'  
-  sh("kubectl create -f deployment/script/front.yaml")
+  sh("kubectl apply -f deployment/script/front.yaml")
 }
