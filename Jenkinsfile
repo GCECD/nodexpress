@@ -5,7 +5,7 @@ node {
   
   checkout scm
   stage 'Build image'
-   sh("docker images")
+ 
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
@@ -17,6 +17,5 @@ node {
   sh("cat deployment/script/*.yaml")
   sh("kubectl apply  -f deployment/script/*.yaml")
   sh("kubectl get pods")
-  sh("kubectl get deployments ")
-   sh("kubectl get deployments hello-node")
+ 
 }
