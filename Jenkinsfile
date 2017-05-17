@@ -6,12 +6,7 @@ node {
 
   checkout scm
 
-  stage 'Build image'
-  sh("docker build -t ${imageTag} .")
-
-  stage 'Push image to registry'
-  sh("gcloud docker push ${imageTag}")
   
   stage 'Deploy Application'  
-  sh("kubectl apply -f deployment/script/front.yaml")
+  sh("kubectl create -f deployment/script/front.yaml")
 }
