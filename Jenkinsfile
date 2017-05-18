@@ -17,4 +17,5 @@ sh("hostname -i")
   sh("kubectl get pods")
   sh("kubectl get services")
  sh(" kubectl get deployment")
+  sh("kubectl describe deployment")
 }
