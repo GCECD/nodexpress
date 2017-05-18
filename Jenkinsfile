@@ -16,5 +16,5 @@ sh("hostname -i")
   sh("kubectl apply  -f deployment/script/*.yaml")
   sh("kubectl get pods")
   sh("kubectl get services")
- 
+ sh(" kubectl get deployment")
 }
